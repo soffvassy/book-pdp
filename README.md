@@ -3,7 +3,7 @@
 link for viewing:
 https://soffvassy.com/supadu-task/
 
-This was built with Vite, React + TS - I fetched the info, which was for one single book, I included all the information, used SCSS, some mixins, variables, subtle animations for better user experience. I divided the components in Header, Footer and PDP, there is a small Review component addition as well (since there werent any reviews present). I decided to add some extra 3d view of the book which turns when hovered on (and on mobile when clicked on). I displayed all the information that was requested (bio was missing, so I just made a check for it and display it if it was there, would work if there is another book with author bio in it). Another cool addition is the glass-looking background of header and footer with the actual cover of the book behind - I think it is a nice touch and it automatically is within the same color scheme as the cover. Pricing - I decided to add a little dropdown in the header to change currency which results in currency change in the body of the page. Date needed a little bit of formatting, so I did that. The directions said to display reviews but tehre werent any, so I just made a little check if there arent any to display no reviews yet and a little add a review section where anyone could type some words and it randomly generates some stars from 1-5 as well. Hosted on my personal hosting. I used github for code keeping. I hope you enjoy it as much as I did!
+This was built with Vite, React + TS - I fetched the info, which was for one single book, I included all the information, used SCSS, some mixins, variables, subtle animations for better user experience. I divided the components in Header, Footer and PDP, there is a small Review component addition as well (since there werent any reviews present). I decided to add some extra 3d view of the book which turns when hovered on (and on mobile when clicked on). I displayed all the information that was requested (bio was missing, so I just made a check for it and display it if it was there, would work if there is another book with author bio in it). Another cool addition is the glass-looking background of header and footer with the actual cover of the book behind - I think it is a nice touch and it automatically is within the same color scheme as the cover. Pricing - I decided to add a little dropdown in the header to change currency which results in currency change in the body of the page. Date needed a little bit of formatting, so I did that. The directions said to display reviews but tehre werent any, so I just made a little check if there arent any to display no reviews yet and a little add a review section where anyone could type some words and it randomly generates some stars from 1-5 as well. I displayed the bookshops and applied their svg logos as well. Hosted on my personal hosting. I used github for code keeping. I hope you enjoy it as much as I did!
 
 **Room for improvement: **
 
@@ -21,4 +21,6 @@ This was built with Vite, React + TS - I fetched the info, which was for one sin
 - Run tests through lighthouse, etc.
 
 
-Code could be cloned and ran with npm run dev
+Code could be cloned and ran with 
+npm install
+npm run dev
