@@ -1,0 +1,114 @@
+//mixins
+@mixin mobile {
+  @media (max-width: 576px) { @content; }
+}
+@mixin tablet {
+  @media (min-width: 768px) { @content; }
+}
+@mixin desktop {
+  @media (min-width: 900px) { @content; }
+}
+@mixin desktop-large {
+  @media (min-width: 1200px) { @content; }
+}
+
+//animations
+@keyframes initAnimation {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-25deg);
+  }
+}
+
+//vars
+$primary-color: #345673;
+$secondary-color: #345345;
+$shadow-color-dark: #01060f;
+$shadow-color-light: #666;
+
+.pdp-wrapper {
+  display: flex;
+
+  >div {
+    flex: 1;
+  }
+}
+
+.cover-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px;
+
+  &:hover, &:focus {
+    .cover {
+      transform: rotateY(0deg);
+    }
+  }
+
+  .cover {
+    width: 300px;
+    height: 450px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-25deg);
+    transition: 0.5s ease;
+    animation: 1s ease 0s 1 initAnimation;
+
+    &:before {
+      position: absolute;
+      content: ' ';
+      left: 0;
+      top: 1px;
+      width: 28px;
+      height: 448px;
+      transform: translateX(284px) rotateY(90deg);
+      background: linear-gradient(90deg,
+              #fff 0%,
+              #f9f9f9 5%,
+              #fff 10%,
+              #f9f9f9 15%,
+              #f9f9f9 55%,
+              #fff 60%,
+              #f9f9f9 65%,
+              #f9f9f9 95%,
+              #fff 100%
+      );
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: ' ';
+      width: 300px;
+      height: 450px;
+      transform: translateZ(-15px);
+      background-color: $shadow-color-dark;
+      border-radius: 0 2px 2px 0;
+      box-shadow: -10px 0 50px 10px $shadow-color-light;
+    }
+
+  > :first-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 450px;
+      transform: translateZ(15px);
+      background-color: $shadow-color-dark;
+      border-radius: 0 2px 2px 0;
+      box-shadow: 5px 5px 20px $shadow-color-light;
+    }
+  }
+}
+
+.background {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.8px);
+  -webkit-backdrop-filter: blur(7.8px);
+}
