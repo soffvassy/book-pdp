@@ -19,3 +19,6 @@ This was built with Vite, React + TS - I fetched the info, which was for one sin
 - Go over the page with a screen reader see if everything is accessible and works properly
 - Manual test some more
 - Run tests through lighthouse, etc.
+
+
+Code could be cloned and ran with npm run dev
