@@ -1,28 +1,20 @@
-import { useEffect} from "react";
+import { useEffect } from "react";
+import type { HeaderProps } from "../types";
 
-interface HeaderProps {
-    book: any;
-    loading: boolean;
-    selectedCurrency: string;
-    setSelectedCurrency: (value: string) => void;
-    currentPrice: string | null;
-    availableCurrencies: string[];
-}
-
-const Header = ({
-                    book,
-                    loading,
-                    selectedCurrency,
-                    setSelectedCurrency,
-                    availableCurrencies
-                }: HeaderProps) => {
-    const handleCurrencyChange = (e) => {
+const Header: React.FC<HeaderProps> = ({
+                                           book,
+                                           loading,
+                                           selectedCurrency,
+                                           setSelectedCurrency,
+                                           availableCurrencies,
+                                       }) => {
+    const handleCurrencyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedCurrency(e.target.value);
     };
-
+    //some extra design background addition to header and footer
     useEffect(() => {
-        const header = document.querySelector('.header') as HTMLElement | null;
-        const footer = document.querySelector('.footer') as HTMLElement | null;
+        const header = document.querySelector('.header') as HTMLElement;
+        const footer = document.querySelector('.footer') as HTMLElement;
 
         if (header && book?.image) {
             header.style.backgroundImage = `url(${book.image})`;
@@ -30,23 +22,25 @@ const Header = ({
         }
 
         return () => {
-            if (header) {
-                header.style.backgroundImage = '';
-            }
+            if (header) header.style.backgroundImage = '';
+            if (footer) footer.style.backgroundImage = '';
         };
     }, [book?.image]);
 
     return (
         <header className="header" role="banner">
-            <div className="overlay" aria-hidden="true"></div>
+            <div className="overlay" aria-hidden="true" />
             <div className="header-content">
                 <h1>Book Store</h1>
 
                 {book && !loading && (
                     <div className="book-header-info">
                         <div className="price-currency-container">
+                            //accessibility feature
                             <label htmlFor="currency-select" className="sr-only">Select currency</label>
                             <span className="current-price">Currency:</span>
+
+                            //currency select
                             <select
                                 id="currency-select"
                                 value={selectedCurrency}

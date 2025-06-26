@@ -22,7 +22,6 @@ function App() {
                 loading={loading}
                 selectedCurrency={selectedCurrency}
                 setSelectedCurrency={setSelectedCurrency}
-                currentPrice={getCurrentPrice()}
                 availableCurrencies={getAvailableCurrencies()}
             />
             <PDP
