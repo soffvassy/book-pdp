@@ -10,7 +10,7 @@ const PDP: React.FC<PDPProps> = ({ book, loading, error, currentPrice }) => {
     if (!book) return <div>No book data available</div>;
 
     const saleDateString = book.sale_date?.date;
-    //date formatting
+    {/*date formatting*/}
     const formattedSaleDate = saleDateString
         ? new Intl.DateTimeFormat('en-US', {
             year: 'numeric',
@@ -33,14 +33,14 @@ const PDP: React.FC<PDPProps> = ({ book, loading, error, currentPrice }) => {
                 </div>
                 <div className='info-container'>
                     <h1>{book.title}</h1>
-                    //check for contributor
+                    {/*check for contributor*/}
                     <h2>by {book.contributors[0]?.contributor.name}</h2>
                     {book.contributors[0]?.contributor.bio && (
                         <p>{book.contributors[0].contributor.bio}</p>
                     )}
                     <p>{book.description}</p>
                     <p><strong>Price:</strong> {currentPrice}</p>
-                    //some additional info
+                    {/*some additional info*/}
                     <div className='book-details'>
                         <p><strong>Pages:</strong> {book.pages}</p>
                         <p><strong>Publisher:</strong> {book.publisher.name}</p>
@@ -52,7 +52,7 @@ const PDP: React.FC<PDPProps> = ({ book, loading, error, currentPrice }) => {
 
                     <div className='retailers'>
                         <p>Buy on:</p>
-                        //retailers with some logos and links to the respective paths
+                        {/*retailers with some logos and links to the respective paths*/}
                         {book.retailers.map(retailer => (
                             <a href={retailer.path}
                                key={retailer.path}
@@ -64,7 +64,7 @@ const PDP: React.FC<PDPProps> = ({ book, loading, error, currentPrice }) => {
                 </div>
             </div>
 
-            //adding the review section
+            {/*adding the review section*/}
             {!book.reviews && <Review
                 reviews={reviews}
                 onAddReview={(review: ReviewType) => setReviews((prev) => [...prev, review])}

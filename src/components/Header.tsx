@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = ({
     const handleCurrencyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedCurrency(e.target.value);
     };
-    //some extra design background addition to header and footer
+    {/*some extra design background addition to header and footer*/}
     useEffect(() => {
         const header = document.querySelector('.header') as HTMLElement;
         const footer = document.querySelector('.footer') as HTMLElement;
@@ -36,11 +36,11 @@ const Header: React.FC<HeaderProps> = ({
                 {book && !loading && (
                     <div className="book-header-info">
                         <div className="price-currency-container">
-                            //accessibility feature
+                            {/*accessibility feature*/}
                             <label htmlFor="currency-select" className="sr-only">Select currency</label>
                             <span className="current-price">Currency:</span>
 
-                            //currency select
+                            {/*currency select*/}
                             <select
                                 id="currency-select"
                                 value={selectedCurrency}

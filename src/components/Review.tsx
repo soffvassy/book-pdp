@@ -6,15 +6,15 @@ const Review: React.FC<ReviewProps> = ({ reviews, onAddReview }) => {
 
     const handleSubmit = () => {
         if (input.trim()) {
-            //generate random stars with emoji
+            {/*generate random stars with emoji*/}
             const randomRating = Math.floor(Math.random() * 5) + 1;
-            //adding the random stars to the text as an obj
+            {/*adding the random stars to the text as an obj*/}
             onAddReview({ text: input.trim(), rating: randomRating });
             setInput('');
         }
     };
 
-    //when input has changed
+    {/*when input has changed*/}
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInput(e.target.value);
     };
@@ -23,7 +23,7 @@ const Review: React.FC<ReviewProps> = ({ reviews, onAddReview }) => {
         <div className="review-section">
             <h3>Reviews</h3>
 
-            //if there are no reviews - show message
+            {/*if there are no reviews - show message*/}
             {reviews.length === 0 ? (
                 <p>No reviews yet.</p>
             ) : (
@@ -37,7 +37,7 @@ const Review: React.FC<ReviewProps> = ({ reviews, onAddReview }) => {
                 </ul>
             )}
 
-            //input for reviews
+            {/*input for reviews*/}
             <div className="review-form">
                 <input
                     type="text"
