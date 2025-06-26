@@ -129,12 +129,13 @@ h2 {
   background: $secondary-color;
 
   .book-wrapper {
-    padding: 50px 20px;
+    padding: 50px 20px 0px;
     display: block;
     position: relative;
 
     @include tablet {
       display: flex;
+      padding: 50px 20px;
 
       > div {
         flex: 1;
